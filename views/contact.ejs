@@ -2,5 +2,18 @@
     <!-- mainbody -->
       <h1>Welcome in Contact</h1>
     <p>Hello Everybody</p>
+    <h1>Contact List : </h1>
+    <ul>
+     
+      <% if (contacts.length < 1 ) { %>
+       <p>Contact Data empty</p>
+      <% } else {%>
+      <% contacts.forEach(contact => { %>
+        <li> Name : <%= contact.name %> </li>
+        <li>Email : <%= contact.email %> </li>
+        <br />
+      <% }) %>
+      <% } %>
 
+    </ul>
  

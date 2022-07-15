@@ -31,24 +31,24 @@ const port = 3000
     app.get('/', (req, res) => {
     // res.send('Hello World!')
     // membuat array yang berisi objek
-    cont = [
-        {
-            name:'adi riyanto',
-            email:'adi@gmail.com',
-        },
-        {
-            name:'riyanto',
-            email:'riyanto@gmail.com',
-        },
-        {
-            name:'mamang',
-            email:'Radi@gmail.com',
-        },
-    ]
+    // cont = [
+    //     {
+    //         name:'adi riyanto',
+    //         email:'adi@gmail.com',
+    //     },
+    //     {
+    //         name:'riyanto',
+    //         email:'riyanto@gmail.com',
+    //     },
+    //     {
+    //         name:'mamang',
+    //         email:'Radi@gmail.com',
+    //     },
+    // ]
    
-    const contacts = loadContact();
+    
 
-    res.render('index',{nama : "Adi Riyanto", title : "WebServer EJS", cont, layout : "layout/main-layout",contacts})
+    res.render('index',{nama : "Adi Riyanto", title : "WebServer EJS", layout : "layout/main-layout"})
     })
 
     app.get('/about', (req, res) => {
@@ -58,8 +58,8 @@ const port = 3000
   
     app.get('/contact', (req, res) => {
         // res.send('This is contact Page!')
-        
-        res.render('contact',{title : "Contact", layout : "layout/main-layout"})
+        const contacts = loadContact();
+        res.render('contact',{title : "Contact", layout : "layout/main-layout",contacts})
     })
 
     //Membuat reques
